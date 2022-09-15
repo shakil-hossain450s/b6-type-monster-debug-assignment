@@ -22,9 +22,9 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
-  console.log(newLetter)
 
   // Handle backspace press
+
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
     return display.removeChild(display.lastChild);
@@ -46,6 +46,7 @@ const typeController = (e) => {
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
+    errorCount = errorCount + 1;
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
   }
 
@@ -57,6 +58,7 @@ const typeController = (e) => {
 
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
+    console.log('true')
     return true;
   }
   return false;
@@ -90,7 +92,7 @@ const gameOver = () => {
 
   // restart everything
   startTime = null;
-  errorCount = 0;
+  // errorCount = 0;
   userText = "";
   display.classList.add("inactive");
 };
@@ -144,3 +146,4 @@ setInterval(() => {
 document.getElementById('blog').addEventListener('click', function () {
   window.location.href = 'blog.html'
 })
+
