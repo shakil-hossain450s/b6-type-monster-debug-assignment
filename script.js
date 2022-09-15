@@ -38,6 +38,9 @@ const typeController = (e) => {
   if (validLetters.includes(newLetter)) {
     userText += newLetter;
   }
+  else {
+    return;
+  }
 
 
 
@@ -58,7 +61,6 @@ const typeController = (e) => {
 
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
-    console.log('true')
     return true;
   }
   return false;
