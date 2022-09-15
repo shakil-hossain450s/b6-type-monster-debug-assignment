@@ -22,6 +22,7 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
+  console.log(newLetter)
 
   // Handle backspace press
 
@@ -73,6 +74,7 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
+  console.log(finishTime)
 
   // show result modal
   resultModal.innerHTML = "";
