@@ -139,3 +139,8 @@ setInterval(() => {
   document.getElementById("show-time").innerHTML = `${startTime ? Math.round(timeSpent) : 0} seconds`;
 
 }, 1000);
+
+
+document.getElementById('blog').addEventListener('click', function () {
+  window.location.href = 'blog.html'
+})
