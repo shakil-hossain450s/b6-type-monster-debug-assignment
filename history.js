@@ -25,6 +25,7 @@ function displayHistory() {
   histories.innerHTML = "";
   const previousTests = JSON.parse(localStorage.getItem("testHistory")) || [];
 
+
   previousTests.forEach(test => {
     const newRow = document.createElement("div");
     newRow.classList.add("card");
